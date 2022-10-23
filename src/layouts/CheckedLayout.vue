@@ -12,7 +12,7 @@
       </form-submit>
     </div>
     <div v-if="check">
-      <input v-model="myCode" />
+      <my-input v-model="myCode" />
       <form-submit @submitForm="checkMyCode" submitSlot="Check">
         Your Code:
         <span>{{ code }}</span>
@@ -24,11 +24,13 @@
 
 <script>
 import FormSubmit from "../components/FormSubmit.vue";
+import MyInput from "../components/UI/input/MyInput.vue";
 import { getRandomIntInclusive } from "../utils/index.js";
 export default {
   name: "CheckedLayout",
   components: {
     FormSubmit,
+    MyInput
   },
   data() {
     return {
